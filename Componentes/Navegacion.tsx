@@ -4,9 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import EliminarAlumno from "../Pages/EliminarAlumno";
+
 import ListarProducto from "../Pages/ListarProducto";
 import AgregarProducto from "../Pages/AgregarProducto";
+import EliminarProducto from "../Pages/EliminarProducto";
 
 export default function Navegacion() {
 
@@ -17,7 +18,7 @@ export default function Navegacion() {
         <tab.Navigator>
             <tab.Screen name='Lista Producto' component={ListarProducto}></tab.Screen>
             <tab.Screen name='Agregar Producto' component={AgregarProducto}></tab.Screen>
-            <tab.Screen name='Eliminar Producto' component={EliminarAlumno}></tab.Screen>
+            <tab.Screen name='Eliminar Producto' component={EliminarProducto}></tab.Screen>
         </tab.Navigator>
     </NavigationContainer>
    

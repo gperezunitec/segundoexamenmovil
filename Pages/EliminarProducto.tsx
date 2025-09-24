@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import ListaAlumno from "./ListaAlumno";
 import {Alert, Button, TextInput} from "react-native";
+import ListarProducto from "./ListarProducto";
 
-export default function EliminarAlumno(props) {
+export default function EliminarProducto(props) {
 
 
-    const [idAlumno, setIdAlumno] = useState<number>()
+    const [idProducto, setIdProducto] = useState<string>()
 
-    async function eliminarAlumno(id:number){
+    async function eliminarProducto(id:string){
         try {
-            const respuesta = await fetch(`http://192.168.0.7:5000/alumno/${idAlumno}`, {
+            const respuesta = await fetch(`http://10.0.2.2:8000/productos/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -17,10 +17,10 @@ export default function EliminarAlumno(props) {
             });
 
             if (respuesta.ok) {
-                Alert.alert("Alumno eliminado correctamente");
-                 // limpiar campo
+                Alert.alert("Producto eliminado correctamente");
+                // limpiar campo
             } else {
-                Alert.alert("No se pudo eliminar el alumno");
+                Alert.alert("No se pudo eliminar el producto");
             }
         } catch (error) {
             console.error(error);
@@ -41,23 +41,22 @@ export default function EliminarAlumno(props) {
                     margin: 10,
                     borderRadius: 5,
                 }}
-                value={idAlumno}
-                onChangeText={setIdAlumno}
+                value={idProducto}
+                onChangeText={setIdProducto}
                 keyboardType="numeric"
             />
             <Button
                 title="Eliminar"
                 onPress={() => {
-                    if (idAlumno) {
-                        eliminarAlumno(idAlumno);
+                    if (idProducto) {
+                        eliminarProducto(idProducto);
                     } else {
                         Alert.alert("Ingrese un ID válido");
                     }
                 }}
             />
-            <ListaAlumno></ListaAlumno>
+            <ListarProducto></ListarProducto>
 
         </>
     );
 }
-
