@@ -68,7 +68,7 @@ export default function AgregarProducto() {
                        onChangeText={setPrecio}
             ></TextInput>
 
-            <Button title='Agregar Alumno' onPress={agregarProducto}></Button>
+            <Button title='Agregar Producto' onPress={agregarProducto}></Button>
         </View>
     )
 }

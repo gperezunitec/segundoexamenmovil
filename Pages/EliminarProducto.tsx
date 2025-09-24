@@ -33,7 +33,7 @@ export default function EliminarProducto(props) {
         <>
 
             <TextInput
-                placeholder="Ingrese el ID del alumno a eliminar"
+                placeholder="Ingrese el part number del Producto a eliminar"
                 style={{
                     borderWidth: 1,
                     borderColor: "#ccc",
